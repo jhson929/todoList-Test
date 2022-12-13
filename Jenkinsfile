@@ -1,7 +1,8 @@
 node {
     def app
     stage('Clone repository') {
-        git 'https://github.com/jhson929/todoList-Test.git'
+	git branch: 'main',
+	url: git 'https://github.com/jhson929/todoList-Test.git'
     }
     stage('Build image') {
         app = docker.build("hoo903/todo-test")
